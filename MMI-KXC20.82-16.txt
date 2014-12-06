@@ -37,9 +37,9 @@ cross=$my_top_dir/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 kernel_out_dir=$PWD/out/target/product/generic/obj/kernel
 cat kernel-msm/arch/arm/configs/msm8610_defconfig kernel-msm/arch/arm/configs/ext_config/debug-msm8610.config > $kernel_out_dir/mapphone_defconfig
 cp $kernel_out_dir/mapphone_defconfig $kernel_out_dir/.config
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir defoldconfig
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir headers_install
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir dtbs
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir modules
-make -j4 -C kernel ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir INSTALL_MOD_PATH=$PWD/out/target/product/generic modules_install
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir defoldconfig
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir headers_install
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir dtbs
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir modules
+make -j4 -C kernel-msm ARCH=arm CROSS_COMPILE=$cross O=$kernel_out_dir INSTALL_MOD_PATH=$PWD/out/target/product/generic modules_install
